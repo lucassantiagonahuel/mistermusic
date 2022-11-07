@@ -17,7 +17,7 @@ function ShoppingCart() {
   return (
     <IconButton aria-label="cart">
       <StyledBadge badgeContent={1} color="secondary">
-        <ShoppingCartIcon />
+        <ShoppingCartIcon color='primary'/>
       </StyledBadge>
     </IconButton>
   );

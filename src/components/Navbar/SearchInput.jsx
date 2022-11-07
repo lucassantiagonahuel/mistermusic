@@ -13,7 +13,7 @@ const SearchBar = () => (
         placeholder="Buscar..."
         size="small"
         sx={{backgroundColor: '#ffebee'}}
-        color="success"
+        color="primary"
       />
       <IconButton type="submit" aria-label="search">
         <SearchIcon style={{ fill: "white" }} />
@@ -29,10 +29,11 @@ function SearchInput() {
         alignSelf: "center",
         justifyContent: "center",
         flexDirection: "column",
-        padding: 20,
+        padding: 5,
       }}
     >
       <SearchBar/>
+      
     </div>
   );
 }

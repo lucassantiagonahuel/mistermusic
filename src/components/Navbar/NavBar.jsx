@@ -1,4 +1,4 @@
-import * as React from 'react';
+import {React,useState} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,19 +11,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGuitar }  from "@fortawesome/free-solid-svg-icons";
 import { faDrum }  from "@fortawesome/free-solid-svg-icons";
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import AvatarCustom from './AvatarCustom';
 import ShoppingCart from './ShoppingCart';
 import SearchInput from './SearchInput';
+import { Grid } from '@mui/material';
+import { Link } from 'react-router-dom';
 
-const pages = ['Bateria/Percusion', 'Teclados', 'Guitarra/Bajo', 'Vientos', 'Amplificadores',<SearchInput></SearchInput>,<AvatarCustom initialName="M"/>,<ShoppingCart></ShoppingCart>];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Bateria', 'Teclados', 'Guitarras', 'Vientos', 'Amplificadores'];
 
 function NavBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -43,139 +41,179 @@ function NavBar() {
   return (
     <AppBar position="static"             
             sx={{
-                backgroundColor: 'red'
+                backgroundColor: 'brown'
             }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}/> */}
-          <IconButton sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
-          <FontAwesomeIcon icon={faGuitar} />
-          <FontAwesomeIcon icon={faDrum} />
-          </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            MRMUSIC
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
-          <IconButton sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}>
-          <FontAwesomeIcon icon={faGuitar} />
-          <FontAwesomeIcon icon={faDrum} />
-          </IconButton>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            MRMUSIC
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
-
-          {/* <SearchInput></SearchInput> */}
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                {/* <AvatarCustom initialName="M"/> */}
+          <Grid item container md={3}>
+            
+            <Grid item>
+              <IconButton color='primary' sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
+                <FontAwesomeIcon icon={faGuitar} />
               </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
+            </Grid>
+            <Grid item>
+              <Link to={"/"}>
+                  <Typography
+                  variant="h4"
+                  noWrap
+                  component="a"
+                  href="/"
+                  sx={{
+                    mr: 2,
+                    display: { xs: 'none', md: 'flex' },
+                    fontFamily: 'monospace',
+                    fontWeight: 700,
+                    letterSpacing: '.3rem',
+                    color: 'white',
+                    textDecoration: 'none',
+                  }}
+                >
+                    MRMUSIC
+                </Typography>
+              </Link>
+            </Grid>
+
+          </Grid>
+
+          <Grid item container md={6}> 
+            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                color="inherit"
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'left',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'left',
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
+                sx={{
+                  display: { xs: 'block', md: 'none' },
+                }}
+              >
+                {pages.map((page) => (
+                      <MenuItem key={page} onClick={handleCloseNavMenu}>
+                          <Typography  textAlign="center">{page}</Typography>
+                      </MenuItem>
+                ))}
+              </Menu>
+            </Box>
+            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+              {pages.map((page) => (
+                <Link to={`/category/${page}`}>
+                  <Button
+                    key={page}
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 3, color: 'white', display: 'block' }}
+                  >
+                    {page}
+                  </Button>
+                </Link>
               ))}
-            </Menu>
-          </Box>
-          {/* <ShoppingCart></ShoppingCart> */}
+            </Box>
+         </Grid>
+            <IconButton sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}>
+            <FontAwesomeIcon icon={faGuitar} />
+            <FontAwesomeIcon icon={faDrum} />
+            </IconButton>
+            <Link to={"/"}>
+                <Typography
+                  variant="h5"
+                  noWrap
+                  component="a"
+                  href=""
+                  sx={{
+                    mr: 2,
+                    display: { xs: 'flex', md: 'none' },
+                    flexGrow: 1,
+                    fontFamily: 'monospace',
+                    fontWeight: 700,
+                    letterSpacing: '.3rem',
+                    color: 'inherit',
+                    textDecoration: 'none',
+                  }}
+                >
+                    MRMUSIC
+                </Typography>
+            </Link>
+
+
+          <Grid item container alignItems="center" justifyContent="flex-end" md={3}>
+            
+            <Grid item>
+              <SearchInput></SearchInput>
+            </Grid>
+
+            <Grid item>
+              <ShoppingCart></ShoppingCart>
+            </Grid>
+          
+          </Grid>
         </Toolbar>
       </Container>
+      {/* <Grid container style={{paddingLeft:"3%"}}>
+        <Grid 
+              item 
+              container 
+              md={3}  
+              alignItems="center"
+              justifyContent="flex-start">
+
+          
+          <Grid item >
+            <img src='https://i.ibb.co/KWg72z7/violencia.png' alt='Icono guitarra' width="65px"/>
+          </Grid>
+
+          <Grid item >
+            <Typography variant='h4'>
+              MRMUSIC
+            </Typography>
+          </Grid>
+
+        </Grid>
+
+
+
+
+        <Grid 
+              item 
+              container 
+              alignItems="center" 
+              justifyContent="space-around"  
+              md={6} 
+              >
+          {pages.map((page) => (
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{page}</Typography>
+                  </MenuItem>
+                ))}
+        </Grid>
+
+        <Grid item container alignItems="center" md={3}>
+            <Grid item>
+              <SearchInput/>
+            </Grid>
+            <Grid item>
+              <ShoppingCart/>
+            </Grid>
+        </Grid>
+      </Grid> */}
     </AppBar>
   );
 }

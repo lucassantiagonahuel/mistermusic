@@ -1,17 +1,30 @@
-import logo from './logo.svg';
+
 import './App.css';
 import NavBar from './components/Navbar/NavBar';
-import CardItem from './components/CardsItems/CardItem';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
   return (
     <div>
-      <header>
+      <BrowserRouter>
         <NavBar/>
-      </header>
-      <body>
-        <CardItem titleCard="Sonor SQ1"></CardItem>
-      </body>
+          <Routes>
+            <Route
+              path="/"
+              element={<ItemListContainer/>}
+            />
+            <Route
+              path="/category/:categoryid"
+              element={<ItemListContainer/>}
+            />
+            <Route
+              path="/detalle/:id"
+              element={<ItemDetailContainer/>}
+            />
+          </Routes>
+      </BrowserRouter>
     </div>
   );
 }
