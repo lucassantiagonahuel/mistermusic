@@ -12,31 +12,24 @@ import { faGuitar }  from "@fortawesome/free-solid-svg-icons";
 import { faDrum }  from "@fortawesome/free-solid-svg-icons";
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import ShoppingCart from './ShoppingCart';
 import SearchInput from './SearchInput';
 import { Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
+import CartWidget from '../CartWidget/CartWidget';
 
 const pages = ['Bateria', 'Teclados', 'Guitarras', 'Vientos', 'Amplificadores'];
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
+  
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
 
   return (
     <AppBar position="static"             
@@ -161,59 +154,14 @@ function NavBar() {
             </Grid>
 
             <Grid item>
-              <ShoppingCart></ShoppingCart>
+              <Link to="/cart">
+                <CartWidget></CartWidget>
+              </Link>
             </Grid>
           
           </Grid>
         </Toolbar>
       </Container>
-      {/* <Grid container style={{paddingLeft:"3%"}}>
-        <Grid 
-              item 
-              container 
-              md={3}  
-              alignItems="center"
-              justifyContent="flex-start">
-
-          
-          <Grid item >
-            <img src='https://i.ibb.co/KWg72z7/violencia.png' alt='Icono guitarra' width="65px"/>
-          </Grid>
-
-          <Grid item >
-            <Typography variant='h4'>
-              MRMUSIC
-            </Typography>
-          </Grid>
-
-        </Grid>
-
-
-
-
-        <Grid 
-              item 
-              container 
-              alignItems="center" 
-              justifyContent="space-around"  
-              md={6} 
-              >
-          {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
-                  </MenuItem>
-                ))}
-        </Grid>
-
-        <Grid item container alignItems="center" md={3}>
-            <Grid item>
-              <SearchInput/>
-            </Grid>
-            <Grid item>
-              <ShoppingCart/>
-            </Grid>
-        </Grid>
-      </Grid> */}
     </AppBar>
   );
 }

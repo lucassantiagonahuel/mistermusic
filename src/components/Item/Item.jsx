@@ -53,7 +53,9 @@ let urlDetail=`/detalle/${product.id}`
                 <Button variant="outlined" color="error">Ver mas</Button>
               </Link>
             <IconButton aria-label="share">
-              <ShoppingCart />
+              <Link to={urlDetail}>
+                <ShoppingCart/>
+              </Link>
             </IconButton>
           </CardActions>
         </Grid>

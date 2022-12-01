@@ -127,21 +127,21 @@ const products = [
     },
     {
         id : 15,
-        name :"Marshall",
-        price : 750.000,
-        stock:45,
+        name :"Fender",
+        price : 220.000,
+        stock:35,
         category:"Amplificadores",
-        image:"https://i.ibb.co/48tgXpz/marshall.webp",
-        description:"Amplificador marshall valvular"
+        image:"https://i.ibb.co/6FHm1GM/fender-Ampli.webp",
+        description:"Amplificador Fender Champion Series 100 Valvular para guitarra de 100W color negro/plata 220V"
     },
     {
         id : 16,
-        name :"Saxo yamaha",
+        name :"Trompeta Getzen",
         price : 995.000,
         stock:5,
         category:"Vientos",
-        image:"https://i.ibb.co/cDND54r/saxo.webp",
-        description:"Saxo tenor yamaha"
+        image:"https://i.ibb.co/3d77q2K/trompeta.webp",
+        description:"Trompeta Getzen Eterna 900dlx 80th Copper Bell"
     },
     {
         id : 17,
@@ -149,91 +149,95 @@ const products = [
         price : 550.000,
         stock:18,
         category:"Guitarras",
-        image:"https://i.ibb.co/zbhsQKT/gibson.webp",
-        description:"Guitarra electrica gibson"
+        image:"https://i.ibb.co/tQtS3ff/gibson-Heave.webp",
+        description:"Guitarra Heavy Gibson 1963 Firebird V Reissue Vos"
     },
     {
         id : 18,
-        name :"Sintetizador nord",
+        name :"Sintetizador korg",
         price : 750.000,
         stock:15,
         category:"Teclados",
-        image:"https://i.ibb.co/7K8Gqrb/nord.webp",
-        description:"Sintetizador nord electric"
+        image:"https://i.ibb.co/2P8nnQ2/sinte-Korg.webp",
+        description:"Sintetizador Workstation Korg Nautilus 88 Teclas"
     },
     {
         id : 19,
-        name :"Marshall",
+        name :"Blackstar",
         price : 750.000,
         stock:45,
         category:"Amplificadores",
-        image:"https://i.ibb.co/48tgXpz/marshall.webp",
-        description:"Amplificador marshall valvular"
+        image:"https://i.ibb.co/f2TQXrz/blackstar-Ampli.webp",
+        description:"Amplificador Blackstar ID Core Stereo 100 Valvular para guitarra de 100W color negro 100V/240V"
     },
     {
         id : 20,
-        name :"Saxo yamaha",
+        name :"Trombón yamaha",
         price : 995.000,
         stock:5,
         category:"Vientos",
-        image:"https://i.ibb.co/cDND54r/saxo.webp",
-        description:"Saxo tenor yamaha"
+        image:"https://i.ibb.co/nbNrP6p/trombon.webp",
+        description:"Trombón Bajo Yamaha Ybl-620g"
     },
     {
         id : 21,
-        name :"Guitarra gibson",
+        name :"Guitarra fender",
         price : 550.000,
         stock:18,
         category:"Guitarras",
-        image:"https://i.ibb.co/zbhsQKT/gibson.webp",
-        description:"Guitarra electrica gibson"
+        image:"https://i.ibb.co/Y49z102/fender-VIola.webp",
+        description:"Guitarra Fender Cus Shop 1963 Telecaster"
     },
     {
         id : 22,
-        name :"Sintetizador nord",
+        name :"Sintetizador yamaha",
         price : 750.000,
         stock:15,
         category:"Teclados",
-        image:"https://i.ibb.co/7K8Gqrb/nord.webp",
-        description:"Sintetizador nord electric"
+        image:"https://i.ibb.co/HqQpP5w/sinte-Yamaha.webp",
+        description:"Yamaha Sintetizador Mini Teclado Portatil Reface Yc"
     },
     {
         id : 23,
-        name :"Marshall",
+        name :"Orange",
         price : 750.000,
         stock:45,
         category:"Amplificadores",
-        image:"https://i.ibb.co/48tgXpz/marshall.webp",
-        description:"Amplificador marshall valvular"
+        image:"https://i.ibb.co/qY0rZfZ/orange-Ampli.webp",
+        description:"Amplificador Orange Crush Pro CR120C Transistor para guitarra de 120W color naranja 230V - 240V"
     },
     {
         id : 24,
-        name :"Saxo yamaha",
+        name :"Gaita",
         price : 995.000,
         stock:5,
         category:"Vientos",
-        image:"https://i.ibb.co/cDND54r/saxo.webp",
-        description:"Saxo tenor yamaha"
+        image:"https://i.ibb.co/FDLTfyx/gaita.webp",
+        description:"Gaita Escocesa Importada"
     },
     {
         id : 25,
-        name :"Guitarra gibson",
+        name :"Guitarra gretsch",
         price : 550.000,
         stock:18,
         category:"Guitarras",
-        image:"https://i.ibb.co/zbhsQKT/gibson.webp",
-        description:"Guitarra electrica gibson"
+        image:"https://i.ibb.co/TrKgBDt/viola-Gretsch.webp",
+        description:"Guitarra Electrica Gretsch G6120ssu Brian Setzer Orange Btq"
     },
     {
         id : 26,
-        name :"Sintetizador nord",
+        name :"Sintetizador roland",
         price : 750.000,
         stock:15,
         category:"Teclados",
-        image:"https://i.ibb.co/7K8Gqrb/nord.webp",
-        description:"Sintetizador nord electric"
+        image:"https://i.ibb.co/7rvSYp6/sinte-Roland.webp",
+        description:"Sintetizador Roland Xps30 Teclado 61 Teclas"
     },
 ]
+
+
+
+
 
 export default function getProductsFromAPI(){
 return new Promise((resolve) => {

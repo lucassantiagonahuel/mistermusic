@@ -13,10 +13,10 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 
-function ShoppingCart() {
+function ShoppingCart(props) {
   return (
     <IconButton aria-label="cart">
-      <StyledBadge badgeContent={1} color="secondary">
+      <StyledBadge badgeContent={props.totalItemsInCart} color="secondary">
         <ShoppingCartIcon color='primary'/>
       </StyledBadge>
     </IconButton>
